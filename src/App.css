@@ -41,6 +41,10 @@
   display: grid;
 }
 
+.projectList{
+  
+}
+
 .projectList p{
   padding: 10px 24px 10px 24px;
   width: 220px;
@@ -50,7 +54,7 @@
   font-weight: 400;
   height: 44px;
   gap: 10px;
-
+  display: flex;
 }
 
 .projectList p:hover{
@@ -132,16 +136,37 @@
   line-height: 20px;
   padding: 5px 10px 5px 10px;
 }
-.line{
+.line {
+  position: relative;
   border-right: 2px solid rgb(218, 214, 214);
   min-height: 821px;
   width: 270px;
-  gap:24px;
+  gap: 24px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: space-between;
 }
+.line::before,
+.line::after {
+  content: '';
+  position: absolute;
+  width: 8px; 
+  height: 8px; 
+  background-color: rgb(218, 214, 214);
+  border-radius: 50%; 
+}
+
+.line::before {
+  top: 0; 
+  transform: translate(3320%, -100%);
+}
+
+.line::after {
+  bottom: 0; 
+  transform: translate(3320%, 50%);
+}
+
 .cards{
   gap: 16px;
   display: flex;

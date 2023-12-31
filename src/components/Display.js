@@ -81,6 +81,7 @@ const Display = ({ projectName }) => {
             </button>
           </div>
         </div>
+        <div className="vertical-line"></div>
         <div className='frame2'>
           <div className='head'>
               <p className='frame-heading' style={{ backgroundColor: colors[1]['secondary-color'], color: colors[1]['primary-color'] }}><li></li>In Progress</p>
