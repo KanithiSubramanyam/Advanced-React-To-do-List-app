@@ -45,46 +45,30 @@ const EditProjectTask = ({ modal, toggle, updateTask, taskDetails }) => {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Edit Task</ModalHeader>
         <ModalBody>
-          <form>
-            <div className='form-group'>
+        <form className='task-form'>
+            <div className='form-group name'>
               <label>Name of the Task</label>
-              <input
-                type='text'
-                className='form-control'
-                value={projectTaskName}
-                onChange={handleChange}
-                name='projectTaskName'
-              ></input>
+              <input type='text' className='form-control' value={projectTaskName} placeholder='Task name'
+                onChange={handleChange}name='projectTaskName'></input>
             </div>
-            <div className='form-group'>
-              <label>Start Date</label>
-              <input
-                type='date'
-                className='form-control'
-                value={projectTaskStartDate}
-                onChange={handleChange}
-                name='projectTaskStartDate'
-              ></input>
+            <div className='dates'>
+              <div className='form-group data'>
+                <label>Start Date</label>
+                <input type='date' className='form-control' value={projectTaskStartDate} 
+                  onChange={handleChange} name='projectTaskStartDate'></input>
+              </div>
+              <div className='form-group data'>
+                <label>Deadline</label>
+                <input type='date' className='form-control' value={projectTaskDeadline}
+                  onChange={handleChange} name='projectTaskDeadline' ></input>
+              </div>
             </div>
-            <div className='form-group'>
-              <label>Deadline</label>
-              <input
-                type='date'
-                className='form-control'
-                value={projectTaskDeadline}
-                onChange={handleChange}
-                name='projectTaskDeadline'
-              ></input>
-            </div>
-            <div className='form-group'>
+            
+            <div className='form-group status'>
               <label>Status</label>
-              <select
-                className='form-control'
-                value={projectTaskStatus}
-                onChange={handleChange}
-                name='projectTaskStatus'
-              >
-                <option value='To Do'>To Do</option>
+              <select className='form-control' value={projectTaskStatus}
+                onChange={handleChange} name='projectTaskStatus'>
+                <option value='To Do' selected>To Do</option>
                 <option value='In Progress'>In Progress</option>
                 <option value='In Review'>In Review</option>
                 <option value='Completed'>Completed</option>

@@ -243,3 +243,66 @@
 .addnewbtn:hover{
   box-shadow: 0px 2px 4px 2px rgba(54, 89, 226, 0.16);
 }
+
+.name{
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.name label{
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.name input, .data input, .status select{
+  border-radius: 8px;
+  border: 1px solid rgba(185, 192, 203, 1);
+  color: rgba(185, 192, 203, 1);
+  padding:4px, 12px, 4px, 12px
+}
+
+.form-control::placeholder {
+  color: rgba(185, 192, 203, 1);
+
+}
+
+
+.task-form{
+  width: 100%;
+  gap:10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dates{
+  display: flex;
+  width: 460px;
+  gap: 10px;
+}
+.dates label{
+  font-size: 12px;
+  padding: 0 5px;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  width: 400px;
+  gap: 4px;
+}
+
+.status{
+  display: flex;
+  flex-direction: column;
+  width: 460px;
+  gap: 5px;
+}
+
+.status label{
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.modal-footer{
+  display: flex;
+}

@@ -23,7 +23,7 @@ const CreateProject = ({modal, toggle, save}) => {
                 <ModalHeader toggle={toggle}>Create Project</ModalHeader>
                 <ModalBody>
                     <form>
-                        <div className='form-group'>
+                        <div className='form-group name'>
                             <label>Project Name</label>
                             <input type='text' className='form-control' value={projectName} onChange = {handleChange} name='projectName'></input>
                         </div>
