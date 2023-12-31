@@ -38,26 +38,29 @@ const Sidebar = () => {
     return (
         <>
         <div className='sidebar'>
-            <div className='heading'>
-                <img src={AppLogo} alt='applogo'></img>
-                <p>Task boards</p>
+            <div className='task-board'>
+                <div className='heading'>
+                        <img src={AppLogo} alt='applogo' className='applogo'></img>
+                        <p>Task boards</p>
+                    </div>
+                    <div className='task-container'>
+                        <div className='projectList'>
+                            {projectList && projectList.map((object, index) => (
+                                <p
+                                    key={index}
+                                    className={` ${activeButtonIndex === index ? 'active' : ''}`} 
+                                    onClick={() => handleProjectClick(index)}
+                                >
+                                    {object.Name}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                    <div className='projectBtn'>
+                        <p onClick={toggle}>+ Add New Project</p>
+                    </div>
             </div>
-            <div className='task-container'>
-                <div className='projectList'>
-                    {projectList && projectList.map((object, index) => (
-                        <button
-                            key={index}
-                            className={`btn  ${activeButtonIndex === index ? 'active' : ''}`} 
-                            onClick={() => handleProjectClick(index)}
-                        >
-                            {object.Name}
-                        </button>
-                    ))}
-                </div>
-                <div className='projectBtn'>
-                    <button onClick={toggle}>+ Add New Project</button>
-                </div>
-            </div>
+            
         </div>
         <div className='content'>
             {selectedProject && <TodoData project={selectedProject} />}

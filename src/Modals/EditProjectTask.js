@@ -8,7 +8,6 @@ const EditProjectTask = ({ modal, toggle, updateTask, taskDetails }) => {
   const [projectTaskStatus, setProjectTaskStatus] = useState('');
 
   useEffect(() => {
-    // Populate form fields with task details when taskDetails changes
     setProjectTaskName(taskDetails?.Name || '');
     setProjectTaskStartDate(taskDetails?.StartDate || '');
     setProjectTaskDeadline(taskDetails?.Deadline || '');

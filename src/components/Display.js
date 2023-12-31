@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Frame1 from './images/Frame1.png';
-import Frame2 from './images/Frame2.png';
-import Frame3 from './images/Frame3.png';
-import Frame4 from './images/Frame4.png';
 import CreateNewTask from '../Modals/CreateNewTask';
 import Card from './Card';
 
@@ -45,74 +41,99 @@ const Display = ({ projectName }) => {
     window.location.reload();
   };
 
+  const [colors] = useState([
+    {
+      'primary-color': 'rgba(54, 89, 226, 1)',
+      'secondary-color': 'rgba(235, 238, 252, 1)',
+    },
+    {
+      'primary-color': 'rgba(238, 70, 188, 1)',
+      'secondary-color': 'rgba(253, 242, 250, 1)',
+    },
+    {
+      'primary-color': 'rgba(63, 161, 227, 1)',
+      'secondary-color': 'rgba(236, 246, 252, 1)',
+    },
+    {
+      'primary-color': 'rgba(18, 187, 35, 1)',
+      'secondary-color': 'rgba(231, 248, 233, 1)',
+    },
+  ]);
   return (
     <>
       <div className='frames'>
         <div className='frame1'>
-          <img src={Frame1} alt='To Do'></img>
+          <div className='head'>
+          <p className='frame-heading' style={{ backgroundColor: colors[0]['secondary-color'], color: colors[0]['primary-color'] }}><li></li>To Do</p>
+          </div>
           <div className='line'>
-            <div>
+            <div className='cards'>
                 {projectTaskData[projectName.Name] &&
                 projectTaskData[projectName.Name].map((object, index) => {
                     if (object.Status === 'To Do') {
-                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} />;
+                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} color={colors[0]}/>;
                     }
                     return null;
                 })}
             </div>
-            <button className='addnewbtn' onClick={toggle}>
-              + Add New Button
+            <button className='addnewbtn' onClick={toggle} style={{ backgroundColor: colors[0]['secondary-color'], color: colors[0]['primary-color'] }}>
+              + Add New 
             </button>
           </div>
         </div>
         <div className='frame2'>
-          <img src={Frame2} alt='In Progress'></img>
-          <div className='line'>
-            <div>
+          <div className='head'>
+              <p className='frame-heading' style={{ backgroundColor: colors[1]['secondary-color'], color: colors[1]['primary-color'] }}><li></li>In Progress</p>
+            </div>         
+            <div className='line'>
+            <div className='cards'>
                 {projectTaskData[projectName.Name] &&
                 projectTaskData[projectName.Name].map((object, index) => {
                     if (object.Status === 'In Progress') {
-                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} />;
+                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} color={colors[1]}/>;
                     }
                     return null;
                 })}
             </div>
-            <button className='addnewbtn' onClick={toggle}>
-              + Add New Button
+            <button className='addnewbtn' onClick={toggle} style={{ backgroundColor: colors[1]['secondary-color'], color: colors[1]['primary-color'] }}>
+              + Add New 
             </button>
           </div>
         </div>
         <div className='frame3'>
-          <img src={Frame3} alt='In Review'></img>
-          <div className='line'>
-            <div>
+          <div className='head'>
+            <p className='frame-heading' style={{ backgroundColor: colors[2]['secondary-color'], color: colors[2]['primary-color'] }}><li></li>In Review</p>
+          </div> 
+         <div className='line'>
+            <div className='cards'>
               {projectTaskData[projectName.Name] &&
                 projectTaskData[projectName.Name].map((object, index) => {
                 if (object.Status === 'In Review') {
-                    return <Card key={index} object={object} index={index} updateListArray={updateListArray} />;
+                    return <Card key={index} object={object} index={index} updateListArray={updateListArray} color={colors[2]}/>;
                 }
                 return null;
                 })}
             </div>
-            <button className='addnewbtn' onClick={toggle}>
-              + Add New Button
+            <button className='addnewbtn' onClick={toggle} style={{ backgroundColor: colors[2]['secondary-color'], color: colors[2]['primary-color'] }}>
+              + Add New 
             </button>
           </div>
         </div>
         <div className='frame4'>
-          <img src={Frame4} alt='Completed'></img>
-          <div className='line'>
-            <div>
+          <div className='head'>
+            <p className='frame-heading' style={{ backgroundColor: colors[3]['secondary-color'], color: colors[3]['primary-color'] }}><li></li>Completed</p>
+          </div>          <div className='line'>
+            <div className='cards'>
                 {projectTaskData[projectName.Name] &&
                 projectTaskData[projectName.Name].map((object, index) => {
                     if (object.Status === 'Completed') {
-                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} />;
+                        return <Card key={index} object={object} index={index} updateListArray={updateListArray} color={colors[3]}/>;
                     }
                     return null;
                 })}
             </div>
-            <button className='addnewbtn' onClick={toggle}>
-              + Add New Button
+            <button className='addnewbtn' onClick={toggle} style={{ backgroundColor: colors[3]['secondary-color'], color: colors[3]['primary-color'] }}>
+              + Add New
             </button>
           </div>
         </div>
