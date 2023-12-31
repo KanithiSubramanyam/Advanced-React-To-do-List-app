@@ -49,25 +49,25 @@ const EditProjectTask = ({ modal, toggle, updateTask, taskDetails }) => {
             <div className='form-group name'>
               <label>Name of the Task</label>
               <input type='text' className='form-control' value={projectTaskName} placeholder='Task name'
-                onChange={handleChange}name='projectTaskName'></input>
+                onChange={handleChange}name='projectTaskName' required></input>
             </div>
             <div className='dates'>
               <div className='form-group data'>
                 <label>Start Date</label>
                 <input type='date' className='form-control' value={projectTaskStartDate} 
-                  onChange={handleChange} name='projectTaskStartDate'></input>
+                  onChange={handleChange} name='projectTaskStartDate' required></input>
               </div>
               <div className='form-group data'>
                 <label>Deadline</label>
                 <input type='date' className='form-control' value={projectTaskDeadline}
-                  onChange={handleChange} name='projectTaskDeadline' ></input>
+                  onChange={handleChange} name='projectTaskDeadline' required></input>
               </div>
             </div>
             
             <div className='form-group status'>
               <label>Status</label>
               <select className='form-control' value={projectTaskStatus}
-                onChange={handleChange} name='projectTaskStatus'>
+                onChange={handleChange} name='projectTaskStatus' required>
                 <option value='To Do' selected>To Do</option>
                 <option value='In Progress'>In Progress</option>
                 <option value='In Review'>In Review</option>

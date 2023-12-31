@@ -25,7 +25,7 @@ const CreateProject = ({modal, toggle, save}) => {
                     <form>
                         <div className='form-group name'>
                             <label>Project Name</label>
-                            <input type='text' className='form-control' value={projectName} onChange = {handleChange} name='projectName'></input>
+                            <input type='text' className='form-control' value={projectName} onChange = {handleChange} name='projectName' required></input>
                         </div>
                     </form>
                 </ModalBody>
